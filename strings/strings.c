@@ -9,7 +9,16 @@
 */
 int string_length(char *s)
 {
-
+  printf("*s is: %c\n", *s); 
+  printf("*s is: %d\n", &s); 
+  
+  int c;
+  
+  for (c = 0; s[c] != '\0'; c++) {
+   printf("%c\n", s[c]);
+  }
+  
+  return (c-1);
 }
 
 /*
@@ -37,4 +46,4 @@ int main(void)
     return 0;
 }
 #endif
-    
+    s
