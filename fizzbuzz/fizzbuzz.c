@@ -14,14 +14,38 @@
 */
 int fizzbuzz(int n)
 {
+  int counter = 0;
+  printf("Int(n) is  : %d\n", n);
+  printf("counter is : %d\n", counter);
+  
+    /* for loop execution */
+   for( counter = 0; counter < n; counter = counter + 1 ){
+      
+    if ( counter % 3 == 0 && counter % 5 == 0 ) {   /* if iteration is
+    divisible by 3 & 5*/
+        printf ("FizzBuzz\n");}
+       /* print 'FizzBuzz' */
+      
+    else if ( counter % 3 ==0 ) {   /* if iteration is divisible by 3 */
+        printf ("Fizz\n"); /* print 'Fizz' */
+    }
 
-}
+    else if ( counter % 5 ==0 ) {   /* if iteration is divisible by 3 */
+        printf ("Buzz\n"); /* print 'Buzz' */
+    }
+
+    else  {   /* if iteration is divisible by 3 */
+        counter = counter + 1;/* print 'counter' */
+    }
+    };
+    return counter;
+};
 
 #ifndef TESTING
 int main(void)
 {
     fizzbuzz(20);
-
+    
     return 0;
 }
 #endif
