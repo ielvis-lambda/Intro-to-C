@@ -11,25 +11,26 @@
 */
 char *string_dup(char *src)
 {
-    printf("Input string: %s\n", src);
+    // printf("Input string: %s\n", src);
     int lengthOfString;
     lengthOfString = strlen(src) + 1;
     char *duplicate;
     duplicate = malloc(1 * lengthOfString);
-    
+
     int i;
     //as long as we are not at a null terminater we increase our counter i
     //and copy our string to this pointer x's memory
     for (i = 0; src[i] != '\0'; i++)
     {
         duplicate[i] = src[i];
+        
     }
     //sets our last value to the null terminator
     duplicate[i] = '\0';
 
     //sets the x pointer to the null terminator
     // duplicate = &src;
-    
+
     return duplicate;
 }
 
@@ -42,6 +43,16 @@ char *string_dup(char *src)
 */
 void mem_copy(void *dest, const void *src, int n)
 {
+    //Casts input pointers to char pointers instead of string pointers
+    char *char_dest = (char *)dest;
+    char *char_src = (char *)src;
+
+    // int i;
+
+    //Using our data size we assign every character from src to destination. 
+    for (int i=0; i < n; i++) {
+        char_dest[i] = char_src[i];
+    }
 }
 
 /*
@@ -55,9 +66,9 @@ void mem_copy(void *dest, const void *src, int n)
     
     Do not use the `realloc` function from the standard libary.
 */
-void *resize_memory(void *ptr, int old_size, int new_size)
-{
-}
+// void *resize_memory(void *ptr, int old_size, int new_size)
+// {
+// }
 
 #ifndef TESTING
 int main(void)
@@ -82,23 +93,23 @@ int main(void)
 
     printf("\n");
 
-    char *url = string_dup("http://lambdaschool.com");
-    char *path = string_dup("/students/");
-    int url_length = strlen(url);
-    int path_length = strlen(path);
+    // char *url = string_dup("http://lambdaschool.com");
+    // char *path = string_dup("/students/");
+    // int url_length = strlen(url);
+    // int path_length = strlen(path);
 
-    int new_length = url_length - 1 + path_length;
-    char *new_url = resize_memory(url, url_length, new_length);
-    char *p = new_url + url_length;
+    // int new_length = url_length - 1 + path_length;
+    // char *new_url = resize_memory(url, url_length, new_length);
+    // char *p = new_url + url_length;
 
-    while (*path != '\0')
-    {
-        *p = *path;
-        p++;
-        path++;
-    }
+    // while (*path != '\0')
+    // {
+    //     *p = *path;
+    //     p++;
+    //     path++;
+    // }
 
-    printf("Full path string: %s\n", new_url);
+    // printf("Full path string: %s\n", new_url);
 
     return 0;
 }
