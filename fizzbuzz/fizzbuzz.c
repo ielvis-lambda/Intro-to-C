@@ -19,18 +19,18 @@ int fizzbuzz(int n)
   printf("counter is : %d\n", counter);
   
     /* for loop execution */
-   for( counter = 0; counter < n; counter = counter + 1 ){
+   for(int i = 1; i < n; i = i + 1 ){
       
-    if ( counter % 3 == 0 && counter % 5 == 0 ) {   /* if iteration is
+    if ( i % 3 == 0 && i % 5 == 0 ) {   /* if iteration is
     divisible by 3 & 5*/
         printf ("FizzBuzz\n");}
        /* print 'FizzBuzz' */
       
-    else if ( counter % 3 ==0 ) {   /* if iteration is divisible by 3 */
+    else if ( i % 3 ==0 ) {   /* if iteration is divisible by 3 */
         printf ("Fizz\n"); /* print 'Fizz' */
     }
 
-    else if ( counter % 5 ==0 ) {   /* if iteration is divisible by 3 */
+    else if ( i % 5 ==0 ) {   /* if iteration is divisible by 3 */
         printf ("Buzz\n"); /* print 'Buzz' */
     }
 
@@ -44,7 +44,7 @@ int fizzbuzz(int n)
 #ifndef TESTING
 int main(void)
 {
-    fizzbuzz(20);
+    fizzbuzz(3);
     
     return 0;
 }
